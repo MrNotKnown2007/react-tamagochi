@@ -1,10 +1,9 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
+// app/(tabs)/_layout.tsx - ИСПРАВЛЕННАЯ ВЕРСИЯ
+import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Tabs } from 'expo-router';
+import React from 'react';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -14,20 +13,43 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Главная',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'home' : 'home'} color={color} />
+          ),
+        }}
+      />
+      {/* ИСПРАВЛЕНО: Используем 'gamepad' вместо 'gamecontroller' */}
+      <Tabs.Screen
+        name="games"
+        options={{
+          title: 'Игры',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'gamepad' : 'gamepad'} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="shop"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Магазин',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'shopping-bag' : 'shopping-bag'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="stats"
+        options={{
+          title: 'Статистика',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'bar-chart' : 'bar-chart'} color={color} />
+          ),
         }}
       />
     </Tabs>
