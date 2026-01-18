@@ -27,8 +27,6 @@
       "package": "com.mrnotknown2007.tamagotchinew"
     },
     "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -49,14 +47,17 @@
     ],
     "experiments": {
       "typedRoutes": true,
-      "reactCompiler": true,
-      "baseUrl": "/tamagochi"
+      "reactCompiler": true
     },
     "extra": {
-      "router": {},
+      "router": {
+        "origin": false,
+        "unstable_static": false
+      },
       "eas": {
         "projectId": "90a645b8-475c-4643-9a1b-2d1968b52931"
       }
     }
+
   }
 }
