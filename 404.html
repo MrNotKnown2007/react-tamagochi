@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamagochi</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA redirect hack для basePath
+      var pathSegmentsToKeep = 1; // Для /tamagochi
+      var l = window.location;
+      
+      // Получаем путь после /tamagochi
+      var path = l.pathname.split('/').slice(pathSegmentsToKeep + 1).join('/');
+      
+      // Редиректим на index.html с сохранением пути
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, pathSegmentsToKeep + 1).join('/') + 
+        '/?/' + path +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
