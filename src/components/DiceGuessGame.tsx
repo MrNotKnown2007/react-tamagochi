@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getAssetPath } from '../utils/assetPath'
 import './DiceGuessGame.css'
 
 interface DiceGuessGameProps {
@@ -80,7 +81,7 @@ export default function DiceGuessGame({ onGameEnd, onClose }: DiceGuessGameProps
     <div className="dice-game">
       <div className="dice-game-header">
         <div className="title-banner">
-          <img src="/models/models/icons/games/Guess/guess_number.png" alt="title" className="title-img" />
+          <img src={getAssetPath("/models/models/icons/games/Guess/guess_number.png")} alt="title" className="title-img" />
         </div>
         <button className="close-button-dice" onClick={handleClose}>✕</button>
       </div>
@@ -88,11 +89,11 @@ export default function DiceGuessGame({ onGameEnd, onClose }: DiceGuessGameProps
       <div className="dice-game-content">
         <div className="stats-row">
           <div className="stat-badge">
-            <img src="/models/models/icons/games/Guess/score_board.png" alt="score" className="stat-bg" />
+            <img src={getAssetPath("/models/models/icons/games/Guess/score_board.png")} alt="score" className="stat-bg" />
             <span className="stat-text">Очки: {score}</span>
           </div>
           <div className="stat-badge">
-            <img src="/models/models/icons/games/Guess/goal_board.png" alt="round" className="stat-bg" />
+            <img src={getAssetPath("/models/models/icons/games/Guess/goal_board.png")} alt="round" className="stat-bg" />
             <span className="stat-text">Раунд: {round}/{maxRounds}</span>
           </div>
         </div>
@@ -101,7 +102,7 @@ export default function DiceGuessGame({ onGameEnd, onClose }: DiceGuessGameProps
           <div className={`top-dice ${isRolling ? 'rolling' : ''}`}>
             {!showTopDice ? (
               <img 
-                src="/models/models/icons/games/Guess/example_square.png" 
+                src={getAssetPath("/models/models/icons/games/Guess/example_square.png")} 
                 alt="default dice"
                 className="dice-img"
               />
@@ -116,7 +117,7 @@ export default function DiceGuessGame({ onGameEnd, onClose }: DiceGuessGameProps
         </div>
 
         <div className="question-banner">
-          <img src="/models/models/icons/games/Guess/which_number.png" alt="question" className="question-img" />
+          <img src={getAssetPath("/models/models/icons/games/Guess/which_number.png")} alt="question" className="question-img" />
         </div>
 
         <div className="game-area">

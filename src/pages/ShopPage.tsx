@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getAssetPath } from '../utils/assetPath'
 import HippoView from '../components/HippoView'
 import { useHippo } from '../context/HippoContext'
 import './ShopPage.css'
@@ -72,11 +73,11 @@ export default function ShopPage() {
   return (
     <div className="shop-page">
       <button className="back-button" onClick={() => window.history.back()}>
-        <img src="/models/models/icons/buttons/arrows/left_casual.png" alt="back" className="back-icon" />
+        <img src={getAssetPath("/models/models/icons/buttons/arrows/left_casual.png")} alt="back" className="back-icon" />
       </button>
 
       <div className="coin-display">
-        <img src="/models/models/icons/stats/money.png" alt="coins" className="coin-icon" />
+        <img src={getAssetPath("/models/models/icons/stats/money.png")} alt="coins" className="coin-icon" />
         <span className="coin-amount">{hippo?.coins || 0}</span>
       </div>
 
@@ -135,7 +136,7 @@ export default function ShopPage() {
                     <div className="status-badge unlocked">✓ Куплено</div>
                   ) : (
                     <div className="status-badge price">
-                      <img src="/models/models/icons/stats/money.png" alt="price" className="price-icon" />
+                      <img src={getAssetPath("/models/models/icons/stats/money.png")} alt="price" className="price-icon" />
                       <span>{currentItem?.price}</span>
                     </div>
                   )}

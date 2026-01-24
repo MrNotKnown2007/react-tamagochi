@@ -55,25 +55,25 @@ const getMoodImage = (mood: string, age: string, costume?: string, head?: string
                         case 'entertainment': return getAssetPath('/models/models/baby/dino/entertainment/entertainment.png');
                         case 'sleep': return getAssetPath('/models/models/baby/dino/sleep/sleep.png');
                         case 'water': return getAssetPath('/models/models/baby/dino/water/water.png');
-                        default: return '/models/models/baby/dino/default.png';
+                        default: return getAssetPath('/models/models/baby/dino/default.png')
                     }
                 case 'costume_bunny':
                     switch (mood) {
-                        case 'hunger': return '/models/models/baby/bunny/hunger/hunger.png';
-                        case 'bath': return '/models/models/baby/bunny/bath/bath.png';
-                        case 'entertainment': return '/models/models/baby/bunny/entertainment/entertainment.png';
-                        case 'sleep': return '/models/models/baby/bunny/sleep/sleep.png';
-                        case 'water': return '/models/models/baby/bunny/water/water.png';
-                        default: return '/models/models/baby/bunny/default.png';
+                        case 'hunger': return getAssetPath('/models/models/baby/bunny/hunger/hunger.png')
+                        case 'bath': return getAssetPath('/models/models/baby/bunny/bath/bath.png')
+                        case 'entertainment': return getAssetPath('/models/models/baby/bunny/entertainment/entertainment.png')
+                        case 'sleep': return getAssetPath('/models/models/baby/bunny/sleep/sleep.png')
+                        case 'water': return getAssetPath('/models/models/baby/bunny/water/water.png')
+                        default: return getAssetPath('/models/models/baby/bunny/default.png')
                     }
                 case 'costume_water':
                     switch (mood) {
-                        case 'hunger': return '/models/models/baby/water_costume/hunger/hunger.png';
-                        case 'bath': return '/models/models/baby/water_costume/bath/bath.png';
-                        case 'entertainment': return '/models/models/baby/water_costume/entertainment/entertainment.png';
-                        case 'sleep': return '/models/models/baby/water_costume/sleep/sleep.png';
-                        case 'water': return '/models/models/baby/water_costume/water/water.png';
-                        default: return '/models/models/baby/water_costume/default.png';
+                        case 'hunger': return getAssetPath('/models/models/baby/water_costume/hunger/hunger.png')
+                        case 'bath': return getAssetPath('/models/models/baby/water_costume/bath/bath.png')
+                        case 'entertainment': return getAssetPath('/models/models/baby/water_costume/entertainment/entertainment.png')
+                        case 'sleep': return getAssetPath('/models/models/baby/water_costume/sleep/sleep.png')
+                        case 'water': return getAssetPath('/models/models/baby/water_costume/water/water.png')
+                        default: return getAssetPath('/models/models/baby/water_costume/default.png')
                     }
             }
         }
@@ -87,34 +87,34 @@ const getMoodImage = (mood: string, age: string, costume?: string, head?: string
     if (isParent) {
         if (hasBoxing && hasBunnyHat) {
             switch (mood) {
-                case 'hunger': return '/models/models/parent/boxing + bunny_hat/hunger/hunger.png';
-                case 'bath': return '/models/models/parent/boxing + bunny_hat/bath/bath.png';
-                case 'entertainment': return '/models/models/parent/boxing + bunny_hat/entertainment/entertainment.png';
-                case 'sleep': return '/models/models/parent/boxing + bunny_hat/sleep/sleep.png';
-                case 'water': return '/models/models/parent/boxing + bunny_hat/water/water.png';
-                default: return '/models/models/parent/boxing + bunny_hat/default.png';
+                case 'hunger': return getAssetPath('/models/models/parent/boxing + bunny_hat/hunger/hunger.png')
+                case 'bath': return getAssetPath('/models/models/parent/boxing + bunny_hat/bath/bath.png')
+                case 'entertainment': return getAssetPath('/models/models/parent/boxing + bunny_hat/entertainment/entertainment.png')
+                case 'sleep': return getAssetPath('/models/models/parent/boxing + bunny_hat/sleep/sleep.png')
+                case 'water': return getAssetPath('/models/models/parent/boxing + bunny_hat/water/water.png')
+                default: return getAssetPath('/models/models/parent/boxing + bunny_hat/default.png')
             }
         }
         
         if (hasBoxing) {
             switch (mood) {
-                case 'hunger': return '/models/models/parent/boxing/hunger/hunger.png';
-                case 'bath': return '/models/models/parent/boxing/bath/bath.png';
-                case 'entertainment': return '/models/models/parent/boxing/entertainment/entertainment.png';
-                case 'sleep': return '/models/models/parent/boxing/sleep/sleep.png';
-                case 'water': return '/models/models/parent/boxing/water/water.png';
-                default: return '/models/models/parent/boxing/default.png';
+                case 'hunger': return getAssetPath('/models/models/parent/boxing/hunger/hunger.png')
+                case 'bath': return getAssetPath('/models/models/parent/boxing/bath/bath.png')
+                case 'entertainment': return getAssetPath('/models/models/parent/boxing/entertainment/entertainment.png')
+                case 'sleep': return getAssetPath('/models/models/parent/boxing/sleep/sleep.png')
+                case 'water': return getAssetPath('/models/models/parent/boxing/water/water.png')
+                default: return getAssetPath('/models/models/parent/boxing/default.png')
             }
         }
         
         if (hasBunnyHat) {
             switch (mood) {
-                case 'hunger': return '/models/models/parent/bunny_hat/hunger/hunger.png';
-                case 'bath': return '/models/models/parent/bunny_hat/bath/bath.png';
-                case 'entertainment': return '/models/models/parent/bunny_hat/entertainment/entertainment.png';
-                case 'sleep': return '/models/models/parent/bunny_hat/sleep/sleep.png';
-                case 'water': return '/models/models/parent/bunny_hat/water/water.png';
-                default: return '/models/models/parent/bunny_hat/default.png';
+                case 'hunger': return getAssetPath('/models/models/parent/bunny_hat/hunger/hunger.png')
+                case 'bath': return getAssetPath('/models/models/parent/bunny_hat/bath/bath.png')
+                case 'entertainment': return getAssetPath('/models/models/parent/bunny_hat/entertainment/entertainment.png')
+                case 'sleep': return getAssetPath('/models/models/parent/bunny_hat/sleep/sleep.png')
+                case 'water': return getAssetPath('/models/models/parent/bunny_hat/water/water.png')
+                default: return getAssetPath('/models/models/parent/bunny_hat/default.png')
             }
         }
     }

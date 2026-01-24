@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { getAssetPath } from '../utils/assetPath'
 import './BubbleGame.css'
 
 interface Bubble {
@@ -217,11 +218,11 @@ export default function BubbleGame({ onGameEnd, onClose }: BubbleGameProps) {
           <div className="game-over-content">
             {timeLeft === 0 ? (
               <>
-                <img src="/models/models/icons/stats/win.png" alt="win" className="game-over-img" />
+                <img src={getAssetPath("/models/models/icons/stats/win.png")} alt="win" className="game-over-img" />
                 <p className="game-over-stats">Очки: {score}</p>
                 <p className="game-over-stats">Время: {30 - timeLeft} сек</p>
                 <p className="game-over-stats reward">
-                  <img src="/models/models/icons/stats/money.png" alt="coins" className="coin-icon-result" />
+                  <img src={getAssetPath("/models/models/icons/stats/money.png")} alt="coins" className="coin-icon-result" />
                   Награда: {Math.floor(score / 2)} монет
                 </p>
               </>
@@ -235,10 +236,10 @@ export default function BubbleGame({ onGameEnd, onClose }: BubbleGameProps) {
             )}
             <div className="result-buttons">
               <button className="result-btn" onClick={handleRestart}>
-                <img src="/models/models/icons/games/restart.png" alt="restart" className="result-btn-img" />
+                <img src={getAssetPath("/models/models/icons/games/restart.png")} alt="restart" className="result-btn-img" />
               </button>
               <button className="result-btn menu-btn" onClick={handleClose}>
-                <img src="/models/models/icons/games/home.png" alt="menu" className="result-btn-img" />
+                <img src={getAssetPath("/models/models/icons/games/home.png")} alt="menu" className="result-btn-img" />
               </button>
             </div>
           </div>

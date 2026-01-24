@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { getAssetPath } from '../utils/assetPath'
 import BubbleGame from '../components/BubbleGame'
 import DiceGuessGame from '../components/DiceGuessGame'
 import MemoryGame from '../components/MemoryGame'
@@ -122,7 +123,7 @@ export default function GamesPage() {
 
       <div className="games-content">
         <div className="energy-bar-card">
-          <img src="/models/models/icons/stats/energy.png" alt="energy" className="energy-icon" />
+          <img src={getAssetPath("/models/models/icons/stats/energy.png")} alt="energy" className="energy-icon" />
           <div className="energy-bar-wrapper">
             <div className="energy-bar-bg">
               <div 
@@ -145,7 +146,7 @@ export default function GamesPage() {
             <div className="game-card-content">
               <h2 className="game-title">{currentGame.title}</h2>
               <div className="game-cost">
-                <img src="/models/models/icons/stats/energy.png" alt="energy" className="cost-icon" />
+                <img src={getAssetPath("/models/models/icons/stats/energy.png")} alt="energy" className="cost-icon" />
                 <span className="cost-text" style={{ color: currentEnergy >= 20 ? '#4CD964' : '#FF3B30' }}>
                   {currentGame.energyCost} энергии
                 </span>
@@ -187,10 +188,10 @@ export default function GamesPage() {
 
       <div className="navigation-arrows">
         <button className="arrow-button" onClick={handlePrevious}>
-          <img src="/models/models/icons/buttons/arrows/left_extended.png" alt="previous" className="arrow-img" />
+          <img src={getAssetPath("/models/models/icons/buttons/arrows/left_extended.png")} alt="previous" className="arrow-img" />
         </button>
         <button className="arrow-button" onClick={handleNext}>
-          <img src="/models/models/icons/buttons/arrows/right_extended.png" alt="next" className="arrow-img" />
+          <img src={getAssetPath("/models/models/icons/buttons/arrows/right_extended.png")} alt="next" className="arrow-img" />
         </button>
       </div>
     </div>

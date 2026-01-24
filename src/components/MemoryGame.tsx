@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { getAssetPath } from '../utils/assetPath'
 import { useHippo } from '../context/HippoContext'
 import './MemoryGame.css'
 
@@ -175,11 +176,11 @@ export default function MemoryGame({ onGameEnd, onClose }: MemoryGameProps) {
     <div className="memory-game">
       <div className="memory-game-header">
         <button className="back-btn-memory" onClick={handleClose}>
-          <img src="/models/models/icons/games/back_arrow.png" alt="back" className="back-icon-memory" />
+          <img src={getAssetPath("/models/models/icons/games/back_arrow.png")} alt="back" className="back-icon-memory" />
         </button>
         
         <div className="title-memory">
-          <img src="/models/models/icons/games/brain.png" alt="brain" className="brain-icon-header" />
+          <img src={getAssetPath("/models/models/icons/games/brain.png")} alt="brain" className="brain-icon-header" />
           <span className="title-text-memory">Игра на память</span>
         </div>
 
@@ -211,7 +212,7 @@ export default function MemoryGame({ onGameEnd, onClose }: MemoryGameProps) {
 
         <div className="restart-btn-container">
           <button className="restart-btn-memory" onClick={initializeGame}>
-            <img src="/models/models/icons/games/restart.png" alt="restart" className="restart-icon" />
+            <img src={getAssetPath("/models/models/icons/games/restart.png")} alt="restart" className="restart-icon" />
           </button>
         </div>
       </div>
@@ -219,21 +220,21 @@ export default function MemoryGame({ onGameEnd, onClose }: MemoryGameProps) {
       {gameCompleted && (
         <div className="win-overlay">
           <div className="win-content">
-            <img src="/models/models/icons/stats/win.png" alt="win" className="win-img" />
+            <img src={getAssetPath("/models/models/icons/stats/win.png")} alt="win" className="win-img" />
             <p className="win-stats">Найдено пар: {matches}/10</p>
             <p className="win-stats">Ходов сделано: {moves}</p>
             <p className="win-stats">Время осталось: {formatTime(timeLeft)}</p>
             <p className="win-stats score">Итоговый счет: {Math.max(0, 1000 - (moves * 10) + (timeLeft * 5))} очков</p>
             <p className="win-stats reward">
-              <img src="/models/models/icons/stats/money.png" alt="coins" className="coin-icon-result" />
+              <img src={getAssetPath("/models/models/icons/stats/money.png")} alt="coins" className="coin-icon-result" />
               Награда: {Math.floor((Math.max(0, 1000 - (moves * 10) + (timeLeft * 5))) / 20)} дополнительных монет
             </p>
             <div className="result-buttons">
               <button className="result-btn" onClick={handleRestart}>
-                <img src="/models/models/icons/games/restart.png" alt="restart" className="result-btn-img" />
+                <img src={getAssetPath("/models/models/icons/games/restart.png")} alt="restart" className="result-btn-img" />
               </button>
               <button className="result-btn menu-btn" onClick={handleClose}>
-                <img src="/models/models/icons/games/home.png" alt="menu" className="result-btn-img" />
+                <img src={getAssetPath("/models/models/icons/games/home.png")} alt="menu" className="result-btn-img" />
               </button>
             </div>
           </div>
@@ -248,10 +249,10 @@ export default function MemoryGame({ onGameEnd, onClose }: MemoryGameProps) {
             <p className="game-over-text-memory">Ходов сделано: {moves}</p>
             <div className="result-buttons">
               <button className="result-btn" onClick={handleRestart}>
-                <img src="/models/models/icons/games/restart.png" alt="restart" className="result-btn-img" />
+                <img src={getAssetPath("/models/models/icons/games/restart.png")} alt="restart" className="result-btn-img" />
               </button>
               <button className="result-btn menu-btn" onClick={handleClose}>
-                <img src="/models/models/icons/games/home.png" alt="menu" className="result-btn-img" />
+                <img src={getAssetPath("/models/models/icons/games/home.png")} alt="menu" className="result-btn-img" />
               </button>
             </div>
           </div>
