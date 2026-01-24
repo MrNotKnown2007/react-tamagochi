@@ -1,50 +1,86 @@
-# Welcome to your Expo app 👋
+# 🦛 Tamagotchi - React версия
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Виртуальный питомец-бегемотик на чистом React.
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## 🚀 Быстрый старт
 
 ```bash
-npm run reset-project
+# Установка зависимостей
+npm install
+
+# Запуск dev-сервера
+npm run dev
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Откройте http://localhost:5173/ в браузере.
 
-## Learn more
+## ✨ Возможности
 
-To learn more about developing your project with Expo, look at the following resources:
+- ✅ **Создание бегемотика** - выбор имени, пола и возраста
+- ✅ **Уход за питомцем** - кормление, купание, игры, сон, питье
+- ✅ **Система характеристик** - здоровье, сытость, счастье, чистота, энергия, жажда
+- ✅ **Мини-игра "Память"** - найди все пары карточек
+- ✅ **Магазин одежды** - покупай и надевай одежду на бегемотика
+- ✅ **Статистика** - отслеживай все действия и достижения
+- ✅ **Автосохранение** - прогресс сохраняется в localStorage
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🎮 Игры
 
-## Join the community
+### Игра на память 🧠
+- Найди все 10 пар карточек
+- Ограничение по времени: 2 минуты
+- Награда зависит от скорости и количества ходов
+- Стоимость: 20 энергии
 
-Join our community of developers creating universal apps.
+## 🛍️ Магазин
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Покупай одежду для своего бегемотика:
+- 🧢 Головные уборы
+- 👕 Верхняя одежда
+- 👖 Нижняя одежда
+- 👟 Обувь
+- 🧸 Костюмы (зависят от возраста)
+
+Зарабатывай монеты, играя в мини-игры!
+
+## 📊 Характеристики
+
+- ❤️ **Здоровье** - общее состояние бегемотика
+- 🍔 **Сытость** - уровень голода
+- 😊 **Счастье** - настроение питомца
+- 🛁 **Чистота** - гигиена
+- ⚡ **Энергия** - для игр и активностей
+- 💧 **Жажда** - уровень жидкости
+
+Характеристики постепенно снижаются со временем. Не забывай ухаживать за своим бегемотиком!
+
+## 🛠 Технологии
+
+- React 18
+- TypeScript
+- React Router DOM
+- Vite
+- CSS
+
+## 📁 Структура
+
+```
+src/
+├── components/       # Компоненты (игры)
+├── context/          # React Context
+├── pages/            # Страницы
+├── types/            # TypeScript типы
+├── utils/            # Утилиты
+└── constants/        # Константы (магазин)
+```
+
+## 🚀 Деплой
+
+```bash
+npm run build
+npm run deploy
+```
+
+## 📄 Лицензия
+
+MIT

@@ -1,0 +1,353 @@
+.shop-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/screens/screens/shop/wardrobe.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.back-button {
+  position: absolute;
+  top: clamp(8px, 2vh, 16px);
+  left: clamp(8px, 2vw, 16px);
+  width: clamp(60px, 15vw, 90px);
+  height: clamp(60px, 15vw, 90px);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+.back-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.coin-display {
+  position: absolute;
+  top: clamp(8px, 2vh, 16px);
+  right: clamp(8px, 2vw, 16px);
+  background: rgba(0, 0, 0, 0.7);
+  padding: clamp(6px, 1.5vh, 10px) clamp(10px, 2.5vw, 16px);
+  border-radius: clamp(12px, 3vw, 18px);
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.5vw, 10px);
+  z-index: 10;
+}
+
+.coin-icon {
+  width: clamp(32px, 8vw, 50px);
+  height: clamp(32px, 8vw, 50px);
+  object-fit: contain;
+}
+
+.coin-amount {
+  font-size: clamp(14px, 3.5vw, 20px);
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.wardrobe-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hippo-display {
+  position: absolute;
+  bottom: clamp(80px, 10vh, 150px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.categories-panel {
+  position: absolute;
+  right: clamp(12px, 3vw, 24px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 2vh, 16px);
+}
+
+.category-button {
+  width: clamp(50px, 12vw, 70px);
+  height: clamp(50px, 12vw, 70px);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.category-button:hover {
+  transform: scale(1.15);
+}
+
+.category-button:active {
+  transform: scale(0.95);
+}
+
+.category-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 5vw;
+}
+
+.modal-content {
+  background: #D9D0C5;
+  border-radius: clamp(16px, 4vw, 24px);
+  padding: clamp(16px, 4vw, 24px);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(16px, 4vh, 24px);
+}
+
+.modal-title {
+  font-size: clamp(18px, 4.5vw, 24px);
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.close-button {
+  width: clamp(28px, 7vw, 36px);
+  height: clamp(28px, 7vw, 36px);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: clamp(18px, 4.5vw, 24px);
+  color: #A65437;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(16px, 4vh, 24px);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: clamp(12px, 3vw, 16px);
+  margin-bottom: clamp(16px, 4vh, 20px);
+  min-height: clamp(180px, 45vh, 220px);
+}
+
+.item-icon-large {
+  width: clamp(70px, 17.5vw, 100px);
+  height: clamp(70px, 17.5vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(10px, 2.5vh, 16px);
+}
+
+.item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-emoji {
+  font-size: clamp(60px, 15vw, 80px);
+}
+
+.item-name {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0 0 clamp(6px, 1.5vh, 10px) 0;
+  text-align: center;
+}
+
+.item-description {
+  font-size: clamp(12px, 3vw, 14px);
+  color: #666;
+  text-align: center;
+  margin: 0 0 clamp(10px, 2.5vh, 16px) 0;
+}
+
+.status-badge {
+  padding: clamp(6px, 1.5vh, 10px) clamp(12px, 3vw, 18px);
+  border-radius: clamp(10px, 2.5vw, 14px);
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+}
+
+.status-badge.unlocked {
+  background: #4CAF50;
+  color: white;
+}
+
+.status-badge.price {
+  background: #FFB74D;
+  color: white;
+}
+
+.price-icon {
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
+  object-fit: contain;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(16px, 4vh, 20px);
+  padding: 0 clamp(8px, 2vw, 12px);
+}
+
+.nav-arrow {
+  width: clamp(36px, 9vw, 48px);
+  height: clamp(36px, 9vw, 48px);
+  border-radius: 50%;
+  background: #A65437;
+  color: white;
+  border: none;
+  font-size: clamp(18px, 4.5vw, 24px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: #8B4513;
+  transform: scale(1.1);
+}
+
+.nav-arrow:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.item-counter {
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.action-buttons {
+  display: flex;
+  gap: clamp(8px, 2vw, 12px);
+}
+
+.action-btn {
+  flex: 1;
+  padding: clamp(10px, 2.5vh, 14px) clamp(16px, 4vw, 24px);
+  border-radius: clamp(10px, 2.5vw, 16px);
+  border: none;
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buy-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.buy-btn:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.buy-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.equip-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.equip-btn:hover {
+  background: #1976D2;
+}
+
+.remove-btn {
+  background: #FF6B9D;
+  color: white;
+}
+
+.remove-btn:hover {
+  background: #E91E63;
+}
+
+.empty-message {
+  text-align: center;
+  color: #666;
+  font-size: clamp(12px, 3vw, 16px);
+  margin: clamp(16px, 4vh, 24px) 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .categories-panel {
+    right: 8px;
+    gap: 6px;
+  }
+  
+  .hippo-display {
+    bottom: 50px;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hippo-display {
+    bottom: 60px;
+  }
+  
+  .categories-panel {
+    gap: 8px;
+  }
+}

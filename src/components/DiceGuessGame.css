@@ -1,0 +1,371 @@
+.dice-game {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/screens/screens/games/DiceGuessGame.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dice-game-header {
+  position: absolute;
+  top: clamp(12px, 3vh, 20px);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.title-banner {
+  position: relative;
+}
+
+.title-img {
+  width: clamp(200px, 50vw, 300px);
+  height: auto;
+  object-fit: contain;
+}
+
+.close-button-dice {
+  position: absolute;
+  top: clamp(8px, 2vh, 12px);
+  right: clamp(8px, 2vw, 16px);
+  width: clamp(32px, 8vw, 44px);
+  height: clamp(32px, 8vw, 44px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: clamp(18px, 4.5vw, 24px);
+  color: #8B4513;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dice-game-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(60px, 15vh, 100px) clamp(12px, 3vw, 20px) clamp(12px, 3vh, 20px);
+  overflow: hidden;
+}
+
+.stats-row {
+  display: flex;
+  gap: clamp(12px, 3vw, 20px);
+  margin-bottom: clamp(16px, 4vh, 24px);
+}
+
+.stat-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(4px, 1vh, 8px) clamp(8px, 2vw, 12px);
+}
+
+.stat-bg {
+  width: clamp(130px, 32vw, 180px);
+  height: auto;
+  object-fit: contain;
+}
+
+.stat-text {
+  position: absolute;
+  font-size: clamp(14px, 3.5vw, 18px);
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-dice-area {
+  margin: clamp(16px, 4vh, 24px) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: clamp(100px, 22vh, 140px);
+}
+
+.top-dice {
+  width: clamp(100px, 22vw, 140px);
+  height: clamp(100px, 22vw, 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-dice.rolling {
+  animation: roll 0.3s ease-in-out infinite;
+}
+
+@keyframes roll {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.1); }
+  50% { transform: rotate(180deg) scale(1); }
+  75% { transform: rotate(270deg) scale(1.1); }
+}
+
+.dice-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.question-banner {
+  margin: clamp(12px, 3vh, 20px) 0;
+}
+
+.question-img {
+  width: clamp(200px, 50vw, 300px);
+  height: auto;
+  object-fit: contain;
+}
+
+.game-area {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: clamp(-20px, -4vh, -10px);
+  width: 100%;
+  padding: 0 clamp(12px, 3vw, 24px);
+}
+
+.hippo-character {
+  position: absolute;
+  left: clamp(12px, 3vw, 24px);
+  top: clamp(-100px, -22vh, -140px);
+  z-index: 10;
+}
+
+.hippo-img {
+  width: clamp(100px, 22vw, 140px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.bottom-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vh, 24px);
+  margin: 0 auto;
+}
+
+.selected-dice-area {
+  min-height: clamp(90px, 20vh, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.selected-dice-img {
+  width: clamp(90px, 20vw, 120px);
+  height: clamp(90px, 20vw, 120px);
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.numbers-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(8px, 2vw, 14px);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.number-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: clamp(55px, 13vw, 75px);
+  height: clamp(55px, 13vw, 75px);
+  flex-shrink: 0;
+}
+
+.number-button:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.number-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.number-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.number-btn-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.game-over-overlay-dice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.game-over-content-dice {
+  background: white;
+  padding: clamp(24px, 6vw, 40px);
+  border-radius: clamp(16px, 4vw, 24px);
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.game-over-title-dice {
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: bold;
+  color: #8B4513;
+  margin: 0 0 clamp(12px, 3vh, 16px) 0;
+}
+
+.game-over-score-dice {
+  font-size: clamp(16px, 4vw, 22px);
+  color: #333;
+  margin: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .dice-game-content {
+    padding-top: 70px;
+  }
+  
+  .numbers-buttons {
+    gap: 6px;
+  }
+  
+  .number-button {
+    width: clamp(48px, 12vw, 65px);
+    height: clamp(48px, 12vw, 65px);
+  }
+  
+  .game-area {
+    margin-top: -30px;
+  }
+  
+  .hippo-character {
+    left: 8px;
+    top: -80px;
+  }
+  
+  .hippo-img {
+    width: clamp(80px, 18vw, 100px);
+  }
+  
+  .bottom-area {
+    gap: 12px;
+  }
+  
+  .selected-dice-area {
+    min-height: 80px;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .dice-game-content {
+    padding-top: 50px;
+    padding-bottom: 8px;
+  }
+  
+  .top-dice-area {
+    min-height: 70px;
+    margin: 8px 0;
+  }
+  
+  .top-dice {
+    width: clamp(70px, 16vw, 90px);
+    height: clamp(70px, 16vw, 90px);
+  }
+  
+  .selected-dice-area {
+    min-height: 60px;
+  }
+  
+  .selected-dice-img {
+    width: clamp(60px, 14vw, 80px);
+    height: clamp(60px, 14vw, 80px);
+  }
+  
+  .hippo-character {
+    top: -60px;
+  }
+  
+  .hippo-img {
+    width: clamp(70px, 16vw, 90px);
+  }
+  
+  .number-button {
+    width: clamp(42px, 10vw, 55px);
+    height: clamp(42px, 10vw, 55px);
+  }
+  
+  .game-area {
+    margin-top: -10px;
+  }
+  
+  .bottom-area {
+    gap: 10px;
+  }
+  
+  .question-banner {
+    margin: 8px 0;
+  }
+  
+  .numbers-buttons {
+    gap: 6px;
+  }
+}
