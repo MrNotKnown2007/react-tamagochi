@@ -5,10 +5,69 @@
     <link rel="icon" type="image/png" href="/react-tamagochi/assets/images/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tamagotchi</title>
-    <script type="module" crossorigin src="/react-tamagochi/assets/index-By-0ZA8Q.js"></script>
+    
+    <!-- GitHub Pages SPA redirect handler -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="module" crossorigin src="/react-tamagochi/assets/index-BLwnhswi.js"></script>
     <link rel="stylesheet" crossorigin href="/react-tamagochi/assets/index-Cj2xUwmq.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script>
+      // Inline скрипт для исправления путей (должен быть до загрузки React)
+      (function() {
+        const BASE_PATH = '/react-tamagochi';
+        
+        function fixImagePaths() {
+          const images = document.querySelectorAll('img[src^="/"]');
+          images.forEach(img => {
+            const src = img.getAttribute('src');
+            if (src && src.startsWith('/') && !src.startsWith(BASE_PATH)) {
+              img.setAttribute('src', BASE_PATH + src);
+            }
+          });
+        }
+        
+        function fixBackgroundImages() {
+          const elements = document.querySelectorAll('[style*="background-image"]');
+          elements.forEach(el => {
+            const style = el.getAttribute('style');
+            if (style && style.includes('url("/')) {
+              const newStyle = style.replace(/url\("\/(?!react-tamagochi)/g, 'url("' + BASE_PATH + '/');
+              el.setAttribute('style', newStyle);
+            }
+          });
+        }
+        
+        // Запускаем сразу и при изменениях
+        const observer = new MutationObserver(() => {
+          fixImagePaths();
+          fixBackgroundImages();
+        });
+        
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => {
+            fixImagePaths();
+            fixBackgroundImages();
+            observer.observe(document.body, { childList: true, subtree: true });
+          });
+        } else {
+          fixImagePaths();
+          fixBackgroundImages();
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+      })();
+    </script>
   </body>
 </html>
