@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import HippoView from '../components/HippoView'
 import { useHippo } from '../context/HippoContext'
+import { getAssetPath } from '../utils/assetPath'
 import './HomePage.css'
 
 export default function HomePage() {
@@ -11,18 +12,18 @@ export default function HomePage() {
   const [editingName, setEditingName] = useState('')
   const [settingsModalVisible, setSettingsModalVisible] = useState(false)
   const [hippoMood, setHippoMood] = useState<'default' | 'hunger' | 'bath' | 'entertainment' | 'sleep' | 'water'>('default')
-  const [backgroundImage, setBackgroundImage] = useState('/screens/screens/Main/real_fon.png')
+  const [backgroundImage, setBackgroundImage] = useState(getAssetPath('/screens/screens/Main/real_fon.png'))
 
   const getBackgroundByTime = useCallback(() => {
     const now = new Date()
     const hours = now.getHours()
     if (hours >= 5 && hours < 17) {
-      return '/screens/screens/Main/real_fon.png'
+      return getAssetPath('/screens/screens/Main/real_fon.png')
     }
     if (hours >= 17 && hours < 22) {
-      return '/screens/screens/Main/evening_fon.png'
+      return getAssetPath('/screens/screens/Main/evening_fon.png')
     }
-    return '/screens/screens/Main/night_fon.png'
+    return getAssetPath('/screens/screens/Main/night_fon.png')
   }, [])
 
   useEffect(() => {
@@ -100,7 +101,7 @@ export default function HomePage() {
       </button>
 
       <div className="coin-container">
-        <img src="/models/models/icons/stats/money.png" alt="coins" className="coin-icon-img" />
+        <img src={getAssetPath('/models/models/icons/stats/money.png')} alt="coins" className="coin-icon-img" />
         <span className="coin-text">{hippo?.coins || 0}</span>
       </div>
 
@@ -129,7 +130,7 @@ export default function HomePage() {
               <div className="stat-bar" style={{ backgroundColor: '#FF9800' }} />
             </div>
             <button className="circle-button" onClick={handleFeed}>
-              <img src="/assets/images/eat_button.png" alt="feed" className="button-image" />
+              <img src={getAssetPath('/assets/images/eat_button.png')} alt="feed" className="button-image" />
             </button>
           </div>
 
@@ -138,7 +139,7 @@ export default function HomePage() {
               <div className="stat-bar" style={{ backgroundColor: '#2196F3' }} />
             </div>
             <button className="circle-button" onClick={handleClean}>
-              <img src="/assets/images/bath_button.png" alt="clean" className="button-image" />
+              <img src={getAssetPath('/assets/images/bath_button.png')} alt="clean" className="button-image" />
             </button>
           </div>
 
@@ -147,7 +148,7 @@ export default function HomePage() {
               <div className="stat-bar" style={{ backgroundColor: '#E91E63' }} />
             </div>
             <button className="circle-button" onClick={handlePlay}>
-              <img src="/assets/images/talk_button.png" alt="play" className="button-image" />
+              <img src={getAssetPath('/assets/images/talk_button.png')} alt="play" className="button-image" />
             </button>
           </div>
 
@@ -156,7 +157,7 @@ export default function HomePage() {
               <div className="stat-bar" style={{ backgroundColor: '#9C27B0' }} />
             </div>
             <button className="circle-button" onClick={handleSleep}>
-              <img src="/assets/images/sleep_button.png" alt="sleep" className="button-image" />
+              <img src={getAssetPath('/assets/images/sleep_button.png')} alt="sleep" className="button-image" />
             </button>
           </div>
 
@@ -165,7 +166,7 @@ export default function HomePage() {
               <div className="stat-bar" style={{ backgroundColor: '#4CAF50' }} />
             </div>
             <button className="circle-button" onClick={handleWater}>
-              <img src="/assets/images/water_button.png" alt="water" className="button-image" />
+              <img src={getAssetPath('/assets/images/water_button.png')} alt="water" className="button-image" />
             </button>
           </div>
         </div>
