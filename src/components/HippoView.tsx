@@ -1,5 +1,7 @@
 // components/HippoView.tsx - React версия с PNG моделями
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 interface HippoViewProps {
     mood?: 'default' | 'hunger' | 'bath' | 'entertainment' | 'sleep' | 'water';
     size?: 'small' | 'medium' | 'large';
@@ -9,6 +11,11 @@ interface HippoViewProps {
     head?: string;
     upper?: string;
 }
+
+// Функция для добавления базового пути
+const getAssetPath = (path: string): string => {
+    return `${BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`.replace(/\/+/g, '/');
+};
 
 // Функция для получения правильного изображения
 const getMoodImage = (mood: string, age: string, costume?: string, head?: string, upper?: string): string => {
@@ -21,21 +28,21 @@ const getMoodImage = (mood: string, age: string, costume?: string, head?: string
             switch (costume) {
                 case 'costume_dino':
                     switch (mood) {
-                        case 'hunger': return '/models/models/parent/dino/hunger/hunger.png';
-                        case 'bath': return '/models/models/parent/dino/bath/bath.png';
-                        case 'entertainment': return '/models/models/parent/dino/entertainment/entertainment.png';
-                        case 'sleep': return '/models/models/parent/dino/sleep/sleep.png';
-                        case 'water': return '/models/models/parent/dino/water/water.png';
-                        default: return '/models/models/parent/dino/default.png';
+                        case 'hunger': return getAssetPath('/models/models/parent/dino/hunger/hunger.png');
+                        case 'bath': return getAssetPath('/models/models/parent/dino/bath/bath.png');
+                        case 'entertainment': return getAssetPath('/models/models/parent/dino/entertainment/entertainment.png');
+                        case 'sleep': return getAssetPath('/models/models/parent/dino/sleep/sleep.png');
+                        case 'water': return getAssetPath('/models/models/parent/dino/water/water.png');
+                        default: return getAssetPath('/models/models/parent/dino/default.png');
                     }
                 case 'costume_duck':
                     switch (mood) {
-                        case 'hunger': return '/models/models/parent/duck/hunger/hunger.png';
-                        case 'bath': return '/models/models/parent/duck/bath/bath.png';
-                        case 'entertainment': return '/models/models/parent/duck/entertainment/entertainment.png';
-                        case 'sleep': return '/models/models/parent/duck/sleep/sleep.png';
-                        case 'water': return '/models/models/parent/duck/water/water.png';
-                        default: return '/models/models/parent/duck/default.png';
+                        case 'hunger': return getAssetPath('/models/models/parent/duck/hunger/hunger.png');
+                        case 'bath': return getAssetPath('/models/models/parent/duck/bath/bath.png');
+                        case 'entertainment': return getAssetPath('/models/models/parent/duck/entertainment/entertainment.png');
+                        case 'sleep': return getAssetPath('/models/models/parent/duck/sleep/sleep.png');
+                        case 'water': return getAssetPath('/models/models/parent/duck/water/water.png');
+                        default: return getAssetPath('/models/models/parent/duck/default.png');
                     }
             }
         } else {
@@ -43,11 +50,11 @@ const getMoodImage = (mood: string, age: string, costume?: string, head?: string
             switch (costume) {
                 case 'costume_shark':
                     switch (mood) {
-                        case 'hunger': return '/models/models/baby/dino/hunger/hunger.png';
-                        case 'bath': return '/models/models/baby/dino/bath/bath.png';
-                        case 'entertainment': return '/models/models/baby/dino/entertainment/entertainment.png';
-                        case 'sleep': return '/models/models/baby/dino/sleep/sleep.png';
-                        case 'water': return '/models/models/baby/dino/water/water.png';
+                        case 'hunger': return getAssetPath('/models/models/baby/dino/hunger/hunger.png');
+                        case 'bath': return getAssetPath('/models/models/baby/dino/bath/bath.png');
+                        case 'entertainment': return getAssetPath('/models/models/baby/dino/entertainment/entertainment.png');
+                        case 'sleep': return getAssetPath('/models/models/baby/dino/sleep/sleep.png');
+                        case 'water': return getAssetPath('/models/models/baby/dino/water/water.png');
                         default: return '/models/models/baby/dino/default.png';
                     }
                 case 'costume_bunny':

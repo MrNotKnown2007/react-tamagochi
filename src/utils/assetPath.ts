@@ -1,9 +1,7 @@
 // Утилита для правильной загрузки ассетов на GitHub Pages
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export function getAssetPath(path: string): string {
-  if (typeof window !== 'undefined' && window.getAssetPath) {
-    return window.getAssetPath(path);
-  }
-  // Fallback
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  return `/${cleanPath}`;
+  return `${BASE_URL}${cleanPath}`.replace(/\/+/g, '/');
 }
