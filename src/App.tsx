@@ -18,7 +18,7 @@ function RootRedirect() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-tamagochi">
       <HippoProvider>
         <Routes>
           <Route path="/" element={<RootRedirect />} />
