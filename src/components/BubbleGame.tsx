@@ -24,6 +24,7 @@ export default function BubbleGame({ onGameEnd, onClose }: BubbleGameProps) {
   const [lives, setLives] = useState(3)
   const [timeLeft, setTimeLeft] = useState(30)
   const [gameActive, setGameActive] = useState(true)
+  // @ts-ignore - используется через setNextBubbleId
   const [nextBubbleId, setNextBubbleId] = useState(0)
 
   const createBubble = useCallback(() => {
