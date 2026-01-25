@@ -1,4 +1,5 @@
 import { ClothingItem } from '../types/hippo'
+import { getAssetPath } from '../utils/assetPath'
 
 export const SHOP_ITEMS: ClothingItem[] = [
     // HEAD ITEMS
@@ -176,7 +177,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Костюм акуленка',
         price: 500,
         category: 'costume',
-        icon: '/models/models/icons/shop/costumes/shark.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/shark.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'child',
@@ -188,7 +189,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Милый костюм кролика',
         price: 500,
         category: 'costume',
-        icon: '/models/models/icons/shop/costumes/bunny.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/bunny.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'child',
@@ -200,7 +201,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Костюм динозавра',
         price: 500,
         category: 'costume',
-        icon: '/models/models/icons/shop/costumes/dino.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/dino.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'parent',
@@ -212,7 +213,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Костюм утки',
         price: 500,
         category: 'costume',
-        icon: '/models/models/icons/shop/costumes/duck.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/duck.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'parent',
@@ -224,7 +225,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Костюм водолаза',
         price: 500,
         category: 'costume',
-        icon: '/models/models/icons/shop/costumes/water_costume.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/water_costume.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'child',
@@ -236,7 +237,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Стильный костюм для официального стиля',
         price: 100,
         category: 'costume',
-        icon: '/models/models/icons/shop/costumes/classic_costume.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/classic_costume.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'parent',
@@ -248,7 +249,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Милые заячьи ушки',
         price: 300,
         category: 'head',
-        icon: '/models/models/icons/shop/costumes/bunny_hat.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/bunny_hat.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'parent'
@@ -259,7 +260,7 @@ export const SHOP_ITEMS: ClothingItem[] = [
         description: 'Для настоящих чемпионов',
         price: 400,
         category: 'upper',
-        icon: 'models/models/icons/shop/costumes/boxing.png',
+        icon: getAssetPath('/models/models/icons/shop/costumes/boxing.png'),
         rarity: 'rare',
         unlocked: false,
         ageRestriction: 'parent'
