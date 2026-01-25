@@ -122,12 +122,12 @@ const getMoodImage = (mood: string, age: string, costume?: string, head?: string
     // Обычные спрайты (casual)
     const basePath = isParent ? '/models/models/parent/casual' : '/models/models/baby/casual';
     switch (mood) {
-        case 'hunger': return `${basePath}/hunger/hunger.png`;
-        case 'bath': return `${basePath}/bath/bath.png`;
-        case 'entertainment': return `${basePath}/entertainment/entertainment.png`;
-        case 'sleep': return `${basePath}/sleep/sleep.png`;
-        case 'water': return `${basePath}/water/water.png`;
-        default: return `${basePath}/default.png`;
+        case 'hunger': return getAssetPath(`${basePath}/hunger/hunger.png`);
+        case 'bath': return getAssetPath(`${basePath}/bath/bath.png`);
+        case 'entertainment': return getAssetPath(`${basePath}/entertainment/entertainment.png`);
+        case 'sleep': return getAssetPath(`${basePath}/sleep/sleep.png`);
+        case 'water': return getAssetPath(`${basePath}/water/water.png`);
+        default: return getAssetPath(`${basePath}/default.png`);
     }
 };
 

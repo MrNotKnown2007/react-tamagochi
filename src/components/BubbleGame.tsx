@@ -119,7 +119,7 @@ export default function BubbleGame({ onGameEnd, onClose }: BubbleGameProps) {
         }
         return prev
       })
-    }, 900) // Спавним новый шарик каждые 0.9 секунды
+    }, 600) // Спавним новый шарик каждые 0.9 секунды
 
     return () => clearInterval(spawnInterval)
   }, [gameActive, createBubble])

@@ -1,34 +1,34 @@
 import { useCallback, useEffect, useState } from 'react'
-import { getAssetPath } from '../utils/assetPath'
 import BubbleGame from '../components/BubbleGame'
 import DiceGuessGame from '../components/DiceGuessGame'
 import MemoryGame from '../components/MemoryGame'
 import { useHippo } from '../context/HippoContext'
+import { getAssetPath } from '../utils/assetPath'
 import './GamesPage.css'
 
 const GAMES = [
   {
     id: 'bubble',
     title: 'Лопай пузыри',
-    icon: '/models/models/icons/games/bubble_icon.png',
+    icon: getAssetPath('/models/models/icons/games/bubble_icon.png'),
     energyCost: 20,
   },
   {
     id: 'diceGuess',
     title: 'Угадай число',
-    icon: '/models/models/icons/games/number icon.png',
+    icon: getAssetPath('/models/models/icons/games/number icon.png'),
     energyCost: 20,
   },
   {
     id: 'memory',
     title: 'Игра на память',
-    icon: '/models/models/icons/games/logic icon.png',
+    icon: getAssetPath('/models/models/icons/games/logic icon.png'),
     energyCost: 20,
   },
   {
     id: 'comingSoon',
     title: 'Скоро...',
-    icon: '/models/models/icons/games/coming soon.png',
+    icon: getAssetPath('/models/models/icons/games/coming soon.png'),
     energyCost: 20,
     isComingSoon: true,
   },

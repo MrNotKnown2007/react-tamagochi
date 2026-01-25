@@ -123,7 +123,7 @@ export default function DiceGuessGame({ onGameEnd, onClose }: DiceGuessGameProps
         <div className="game-area">
           <div className="hippo-character">
             <img 
-              src={`/models/models/icons/games/Guess/${hippoMood}_hippo.png`}
+              src={getAssetPath(`/models/models/icons/games/Guess/${hippoMood}_hippo.png`)}
               alt="hippo" 
               className="hippo-img" 
             />
