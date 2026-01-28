@@ -100,22 +100,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  height: clamp(70px, 18vh, 100px);
-}
-
-.stat-bar-container {
-  width: clamp(8px, 2vw, 12px);
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: clamp(4px, 1vw, 6px);
-  margin-bottom: clamp(2px, 0.5vh, 4px);
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-
-.stat-bar {
-  width: 100%;
-  height: 100%;
+  gap: clamp(4px, 1vh, 8px);
 }
 
 .circle-button {

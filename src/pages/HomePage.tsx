@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import CircularProgress from '../components/CircularProgress'
 import HippoView from '../components/HippoView'
 import { useHippo } from '../context/HippoContext'
 import { getAssetPath } from '../utils/assetPath'
@@ -126,45 +127,35 @@ export default function HomePage() {
 
         <div className="action-buttons-container">
           <div className="button-with-stats">
-            <div className="stat-bar-container" style={{ height: Math.max(4, (hippo?.stats.satiety || 0) * 0.6) }}>
-              <div className="stat-bar" style={{ backgroundColor: '#FF9800' }} />
-            </div>
+            <CircularProgress value={hippo?.stats.satiety || 0} color="#FF9800" size={50} />
             <button className="circle-button" onClick={handleFeed}>
               <img src={getAssetPath('/assets/images/eat_button.png')} alt="feed" className="button-image" />
             </button>
           </div>
 
           <div className="button-with-stats">
-            <div className="stat-bar-container" style={{ height: Math.max(4, (hippo?.stats.cleanliness || 0) * 0.6) }}>
-              <div className="stat-bar" style={{ backgroundColor: '#2196F3' }} />
-            </div>
+            <CircularProgress value={hippo?.stats.cleanliness || 0} color="#2196F3" size={50} />
             <button className="circle-button" onClick={handleClean}>
               <img src={getAssetPath('/assets/images/bath_button.png')} alt="clean" className="button-image" />
             </button>
           </div>
 
           <div className="button-with-stats">
-            <div className="stat-bar-container" style={{ height: Math.max(4, (hippo?.stats.happiness || 0) * 0.6) }}>
-              <div className="stat-bar" style={{ backgroundColor: '#E91E63' }} />
-            </div>
+            <CircularProgress value={hippo?.stats.happiness || 0} color="#E91E63" size={50} />
             <button className="circle-button" onClick={handlePlay}>
               <img src={getAssetPath('/assets/images/talk_button.png')} alt="play" className="button-image" />
             </button>
           </div>
 
           <div className="button-with-stats">
-            <div className="stat-bar-container" style={{ height: Math.max(4, (hippo?.stats.energy || 0) * 0.6) }}>
-              <div className="stat-bar" style={{ backgroundColor: '#9C27B0' }} />
-            </div>
+            <CircularProgress value={hippo?.stats.energy || 0} color="#9C27B0" size={50} />
             <button className="circle-button" onClick={handleSleep}>
               <img src={getAssetPath('/assets/images/sleep_button.png')} alt="sleep" className="button-image" />
             </button>
           </div>
 
           <div className="button-with-stats">
-            <div className="stat-bar-container" style={{ height: Math.max(4, (hippo?.stats.thirst || 0) * 0.6) }}>
-              <div className="stat-bar" style={{ backgroundColor: '#4CAF50' }} />
-            </div>
+            <CircularProgress value={hippo?.stats.thirst || 0} color="#00BCD4" size={50} />
             <button className="circle-button" onClick={handleWater}>
               <img src={getAssetPath('/assets/images/water_button.png')} alt="water" className="button-image" />
             </button>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getAssetPath } from '../utils/assetPath'
 import { useHippo } from '../context/HippoContext'
+import { getAssetPath } from '../utils/assetPath'
 import './MemoryGame.css'
 
 interface Card {
@@ -16,19 +16,19 @@ interface MemoryGameProps {
 }
 
 const CARD_IMAGES = [
-  '/models/models/icons/games/cards/card1 (1).png',
-  '/models/models/icons/games/cards/card2 (1).png',
-  '/models/models/icons/games/cards/card3 (1).png',
-  '/models/models/icons/games/cards/card4 (1).png',
-  '/models/models/icons/games/cards/card5 (1).png',
-  '/models/models/icons/games/cards/card6 (1).png',
-  '/models/models/icons/games/cards/card7 (1).png',
-  '/models/models/icons/games/cards/card8 (1).png',
-  '/models/models/icons/games/cards/card9.png',
-  '/models/models/icons/games/cards/card10.png',
+  getAssetPath('/models/models/icons/games/cards/card1 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card2 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card3 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card4 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card5 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card6 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card7 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card8 (1).png'),
+  getAssetPath('/models/models/icons/games/cards/card9.png'),
+  getAssetPath('/models/models/icons/games/cards/card10.png'),
 ]
 
-const CARD_BACK = '/models/models/icons/games/cards/back.png'
+const CARD_BACK = getAssetPath('/models/models/icons/games/cards/back.png')
 
 export default function MemoryGame({ onGameEnd, onClose }: MemoryGameProps) {
   const { updateGameStats } = useHippo()
