@@ -151,7 +151,7 @@
   position: absolute;
   left: clamp(12px, 3vw, 24px);
   top: clamp(-100px, -22vh, -140px);
-  z-index: 10;
+  z-index: 50;
 }
 
 .hippo-img {
@@ -302,7 +302,7 @@
   }
   
   .hippo-img {
-    width: clamp(80px, 18vw, 100px);
+    width: clamp(50px, 12vw, 75px);
   }
   
   .bottom-area {

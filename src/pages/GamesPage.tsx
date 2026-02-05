@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import BubbleGame from '../components/BubbleGame'
 import DiceGuessGame from '../components/DiceGuessGame'
+import FlappyHippo from '../components/FlappyHippo'
 import MemoryGame from '../components/MemoryGame'
 import { useHippo } from '../context/HippoContext'
 import { getAssetPath } from '../utils/assetPath'
@@ -26,6 +27,12 @@ const GAMES = [
     energyCost: 20,
   },
   {
+    id: 'flappyHippo',
+    title: 'Летающий бегемот',
+    icon: getAssetPath('/models/models/icons/games/brain.png'),
+    energyCost: 20,
+  },
+  {
     id: 'comingSoon',
     title: 'Скоро...',
     icon: getAssetPath('/models/models/icons/games/coming soon.png'),
@@ -36,7 +43,7 @@ const GAMES = [
 
 export default function GamesPage() {
   const { hippo, addCoins, updateStats } = useHippo()
-  const [activeGame, setActiveGame] = useState<'memory' | 'bubble' | 'diceGuess' | null>(null)
+  const [activeGame, setActiveGame] = useState<'memory' | 'bubble' | 'diceGuess' | 'flappyHippo' | null>(null)
   const [currentGameIndex, setCurrentGameIndex] = useState(0)
   const [backgroundImage, setBackgroundImage] = useState('/screens/screens/Main/real_fon.png')
 
@@ -74,6 +81,8 @@ export default function GamesPage() {
       setActiveGame('bubble')
     } else if (currentGame.id === 'diceGuess') {
       setActiveGame('diceGuess')
+    } else if (currentGame.id === 'flappyHippo') {
+      setActiveGame('flappyHippo')
     }
   }
 
@@ -113,6 +122,10 @@ export default function GamesPage() {
 
   if (activeGame === 'diceGuess') {
     return <DiceGuessGame onGameEnd={handleGameEnd} onClose={handleGameClose} />
+  }
+
+  if (activeGame === 'flappyHippo') {
+    return <FlappyHippo onGameEnd={handleGameEnd} onClose={handleGameClose} />
   }
 
   return (

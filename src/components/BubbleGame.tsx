@@ -223,7 +223,7 @@ export default function BubbleGame({ onGameEnd, onClose }: BubbleGameProps) {
                 <p className="game-over-stats">Время: {30 - timeLeft} сек</p>
                 <p className="game-over-stats reward">
                   <img src={getAssetPath("/models/models/icons/stats/money.png")} alt="coins" className="coin-icon-result" />
-                  Награда: {Math.floor(score / 2)} монет
+                  Награда: {15 + Math.floor(score / 20)} монет
                 </p>
               </>
             ) : (

@@ -477,3 +477,14 @@
     width: 60px;
   }
 }
+
+@media (max-width: 540px) {
+  .cards-grid {
+    gap: 2px;
+    padding: 0 4px;
+  }
+  
+  .win-img {
+    width: 60px;
+  }
+}
